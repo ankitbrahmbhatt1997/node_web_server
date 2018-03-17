@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const hbs = require('hbs');
+const port = process.env.PORT || 6600;
 let app = express();
 // app.use(express.static(__dirname + '/public'));
 app.use((req, res, next) => {
@@ -62,6 +63,6 @@ app.get('/bad', (req, res) => {
 
 
 })
-app.listen(6600, () => {
-    console.log('Starting the server');
+app.listen(port, () => {
+    console.log(`Starting the server on ${port}`);
 });
